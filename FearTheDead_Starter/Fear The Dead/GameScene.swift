@@ -28,6 +28,38 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // Setup physics world's contact delegate
     physicsWorld.contactDelegate = self
     
+    // Setup player
+    player = self.childNode(withName: "player") as? SKSpriteNode
+    self.listener = player
+    
+    // Setup zombies
+    for child in self.children {
+        if child.name == "zombie" {
+            if let child = child as? SKSpriteNode {
+                // Add SKAudioNode to zombie
+                let audioNode: SKAudioNode = SKAudioNode(fileNamed: "fear_moan.wav")
+                // Creating Audio Actions
+                // https://developer.apple.com/reference/spritekit/skaction#1655173
+                // audioNode.run(SKAction.changeVolume(to: 0.5, duration: 2.0))
+                /**
+                audioNode.run(SKAction.repeatForever(SKAction.sequence([
+                    SKAction.stop(),
+                    SKAction.wait(forDuration: Double(arc4random_uniform(5)+1)),
+                    SKAction.play(),
+                    SKAction.customAction(withDuration: 0.1, actionBlock: { (_, _) in
+                        print("custom action!")
+                    })
+                ])))
+                **/
+                child.addChild(audioNode)                
+                zombies.append(child)
+            }
+        }
+    }
+    
+    // Setup goal
+    goal = self.childNode(withName: "goal") as? SKSpriteNode
+    
     // Setup initial camera position
     updateCamera()
   }
@@ -139,21 +171,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     if firstBody.categoryBitMask == player?.physicsBody?.categoryBitMask &&
       secondBody.categoryBitMask == zombies[0].physicsBody?.categoryBitMask {
         // Player & Zombie
-        gameOver(false)
+        gameOver(didWin: false)
     } else if firstBody.categoryBitMask == player?.physicsBody?.categoryBitMask &&
       secondBody.categoryBitMask == goal?.physicsBody?.categoryBitMask {
         // Player & Goal
-        gameOver(true)
+        gameOver(didWin: true)
     }
   }
   
   
   // MARK: Helper Functions
   
-  fileprivate func gameOver(_ didWin: Bool) {
+  fileprivate func gameOver(didWin: Bool) {
     print("- - - Game Ended - - -")
     let menuScene = MenuScene(size: self.size)
     menuScene.soundToPlay = didWin ? "fear_win.mp3" : "fear_lose.mp3"
+    
+    // let soundToPlay: String = didWin ? "fear_win.mp3" : "fear_lose.mp3"
+    // self.run(SKAction.playSoundFileNamed(soundToPlay, waitForCompletion: false))
+    
     let transition = SKTransition.flipVertical(withDuration: 1.0)
     menuScene.scaleMode = SKSceneScaleMode.aspectFill
     self.scene!.view?.presentScene(menuScene, transition: transition)

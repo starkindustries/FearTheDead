@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		233C49591DABA7C500BAD5DD /* Walls.sks in Resources */ = {isa = PBXBuildFile; fileRef = 233C49581DABA7C500BAD5DD /* Walls.sks */; };
+		233C495B1DABA8F500BAD5DD /* Room.sks in Resources */ = {isa = PBXBuildFile; fileRef = 233C495A1DABA8F500BAD5DD /* Room.sks */; };
 		352F990A1BE3E92D001D1D3E /* fear_bg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 352F99051BE3E92D001D1D3E /* fear_bg.mp3 */; };
 		352F990B1BE3E92D001D1D3E /* fear_lose.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 352F99061BE3E92D001D1D3E /* fear_lose.mp3 */; };
 		352F990C1BE3E92D001D1D3E /* fear_moan.wav in Resources */ = {isa = PBXBuildFile; fileRef = 352F99071BE3E92D001D1D3E /* fear_moan.wav */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		233C49581DABA7C500BAD5DD /* Walls.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Walls.sks; sourceTree = "<group>"; };
+		233C495A1DABA8F500BAD5DD /* Room.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Room.sks; sourceTree = "<group>"; };
 		352F99051BE3E92D001D1D3E /* fear_bg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = fear_bg.mp3; path = Sounds/fear_bg.mp3; sourceTree = "<group>"; };
 		352F99061BE3E92D001D1D3E /* fear_lose.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = fear_lose.mp3; path = Sounds/fear_lose.mp3; sourceTree = "<group>"; };
 		352F99071BE3E92D001D1D3E /* fear_moan.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = fear_moan.wav; path = Sounds/fear_moan.wav; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				9B7705B11BA46C7A0030C590 /* GameScene.sks */,
+				233C49581DABA7C500BAD5DD /* Walls.sks */,
+				233C495A1DABA8F500BAD5DD /* Room.sks */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -156,11 +162,12 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Razeware;
 				TargetAttributes = {
 					9B8ABCD41B9E9F6D002E2EE3 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = S76F4E24H2;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -191,6 +198,8 @@
 				352F990D1BE3E92D001D1D3E /* fear_wall.mp3 in Resources */,
 				9BF18EE31B9ECDC700CDE83C /* LaunchScreen.xib in Resources */,
 				352F990E1BE3E92D001D1D3E /* fear_win.mp3 in Resources */,
+				233C495B1DABA8F500BAD5DD /* Room.sks in Resources */,
+				233C49591DABA7C500BAD5DD /* Walls.sks in Resources */,
 				352F990B1BE3E92D001D1D3E /* fear_lose.mp3 in Resources */,
 				9B7705B21BA46C7A0030C590 /* GameScene.sks in Resources */,
 				352F990A1BE3E92D001D1D3E /* fear_bg.mp3 in Resources */,
@@ -230,8 +239,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -254,7 +265,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -275,8 +286,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -292,9 +305,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -303,6 +317,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S76F4E24H2;
 				INFOPLIST_FILE = "Fear The Dead/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -316,6 +331,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S76F4E24H2;
 				INFOPLIST_FILE = "Fear The Dead/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

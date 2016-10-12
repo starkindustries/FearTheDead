@@ -25,7 +25,8 @@ class MenuScene: SKScene {
     
     // Play sound
     if let soundToPlay = soundToPlay {
-      self.run(SKAction.playSoundFileNamed(soundToPlay, waitForCompletion: false))
+        print("soundToPlay: " + soundToPlay)
+        self.run(SKAction.playSoundFileNamed(soundToPlay, waitForCompletion: false))
     }
     
     self.addChild(label)
